@@ -1,0 +1,186 @@
+<!doctype html>
+<head>
+    <title>Sensei Strategies</title>
+    <link rel="stylesheet" href="css/master.css"/>
+    <link rel="stylesheet" href="css/diet_calculator.css"/>
+    <script type="text/javascript" src="js/diet_calculator.js"></script>
+</head>
+<!--<style>
+</style>-->
+<body>
+    <header>
+        <h1 id="megatitle">Sensei Strategies</h1>
+        <h1>-Diet Calculator-</h1>
+    </header>
+    <nav class="fixed-navigation">
+        <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="projects.html">Projects</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
+    </nav>
+    <div id="left-navigation-container" class="floating-navigation-container">
+        <nav id="left-navigation" class="floating-navigation separate-time">
+            <div class="floating-navigation-spacing"></div>
+            <div class="floating-navigation-inner-container">
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="projects.html">Projects</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
+            </div>
+            <div class="floating-navigation-spacing"></div>
+        </nav>
+    </div>
+    <div id="right-navigation-container" class="floating-navigation-container">
+        <nav id="right-navigation" class="floating-navigation separate-time">
+            <div class="floating-navigation-spacing"></div>
+            <div class="floating-navigation-inner-container">
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="projects.html">Projects</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
+            </div>
+            <div class="floating-navigation-spacing"></div>
+        </nav>
+    </div>
+    <main>
+        <div id="left-spacing" class="spacing"></div>
+        <article>
+            <p>Here is where the calculator starts. There might be an explanation of what this page is and does here.</p><br>
+            <p class="inlined">Height in inches: </p><input id="height-in-inches-input" type="number"><br>
+            <p class="inlined">Weight in pounds: </p><input id="weight-in-pounds-input" type="number"><br>
+            <p class="inlined">Age in years: </p><input id="age-input" type="number"><br>
+            <br>
+            <p class="inlined">Choose the activity level that describes you best.</p><br>
+            <fieldset class="activity-level-fieldset">
+                <legend>Activity level</legend>
+                <input id="activity-level-input-sedentary" type="radio" name="activity-level-namegroup" value="sedentary" checked>
+                <label for="activity-level-input-sedentary">Sedentary (little or no exercise) [x1.2]</label>
+                <br>
+                <input id="activity-level-input-light" type="radio" name="activity-level-namegroup" value="light">
+                <label for="activity-level-input-light">Lightly active (light exercise 1-3 days/week) [x1.375]</label>
+                <br>
+                <input id="activity-level-input-moderate" type="radio" name="activity-level-namegroup" value="moderate">
+                <label for="activity-level-input-moderate">Moderately active (moderate exercise 3-5 days/week) [x1.55]</label>
+                <br>
+                <input id="activity-level-input-heavy" type="radio" name="activity-level-namegroup" value="heavy">
+                <label for="activity-level-input-heavy">Very active (hard exercise 6-7 days/week) [x1.725]</label>
+                <br>
+                <input id="activity-level-input-extreme" type="radio" name="activity-level-namegroup" value="extreme">
+                <label for="activity-level-input-extreme">Extremely active (double training or physical job with exercise) [x1.9]</label>
+            </fieldset>
+            <br>
+            <p class="inlined">Choose the option that describes your intent with regards to your weight.</p><br>
+            <fieldset class="weight-intent-fieldset">
+                <legend>Weight intent</legend>
+                <input id="weight-intent-input-losefast" type="radio" name="weight-intent-namegroup" value="losefast">
+                <label for="weight-intent-input-losefast">Lose weight quickly (-20%)</label>
+                <br>
+                <input id="weight-intent-input-lose" type="radio" name="weight-intent-namegroup" value="lose">
+                <label for="weight-intent-input-lose">Lose weight (-15%)</label>
+                <br>
+                <input id="weight-intent-input-maintain" type="radio" name="weight-intent-namegroup" value="maintain" checked>
+                <label for="weight-intent-input-maintain">Maintain weight</label>
+                <br>
+                <input id="weight-intent-input-gain" type="radio" name="weight-intent-namegroup" value="gain">
+                <label for="weight-intent-input-gain">Gain weight (+10%)</label>
+                <br>
+                <input id="weight-intent-input-gainfast" type="radio" name="weight-intent-namegroup" value="gainfast">
+                <label for="weight-intent-input-gainfast">Gain weight quickly (+15%)</label>
+            </fieldset>
+            <br>
+            <div class="protein-multiplier-pseudo-fieldset-div">
+                <p class="inlined">Select a protein multiplier in g/lbs.</p><br>
+                <div>
+                    <div class="protein-multiplier-range-label">.5</div>
+                    <div class="protein-multiplier-range-label">.6</div>
+                    <div class="protein-multiplier-range-label">.7</div>
+                    <div class="protein-multiplier-range-label">.8</div>
+                    <div class="protein-multiplier-range-label">.9</div>
+                    <div class="protein-multiplier-range-label">1.0</div>
+                    <div class="protein-multiplier-range-label">1.1</div>
+                </div>
+                <input id="protein-multiplier-input" type="range" min="0.5" max="1.1" step="0.05" value="0.85" list="protein-multiplier-datalist">
+                <datalist id="protein-multiplier-datalist">
+                    <option>.5</option>
+                    <option>.6</option>
+                    <option>.7</option>
+                    <option>.8</option>
+                    <option>.9</option>
+                    <option>1.0</option>
+                    <option>1.1</option>
+                </datalist>
+            </div>
+            <br>
+            <br>
+            <div class="fat-percentage-pseudo-fieldset-div">
+                <p class="inlined">What percentage of your calories should be fat?</p><br>
+                <div>
+                    <div class="fat-percentage-range-label">10%</div>
+                    <div class="fat-percentage-range-label">20%</div>
+                    <div class="fat-percentage-range-label">30%</div>
+                    <div class="fat-percentage-range-label">40%</div>
+                    <div class="fat-percentage-range-label">50%</div>
+                </div>
+                <input id="fat-percentage-input" type="range" min="10" max="50" step="10" value="30">
+                <datalist id="fat-percentage-datalist">
+                    <option>10%</option>
+                    <option>20%</option>
+                    <option>30%</option>
+                    <option>40%</option>
+                    <option>50%</option>
+                </datalist>
+            </div>
+            <br>
+            <br>
+            <button>Calculate</button>
+            <br>
+            <br>
+            <p class="centered monospace-messaging">----DIET-PLAN----</p>
+            <div id="results-table-div">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Percentage</th>
+                        <th>Grams</th>
+                        <th>Calories</th>
+                    </tr>
+                    <tr>
+                        <th class="row-header">Protein</th>
+                        <td id="protein-percentage-cell"></td>
+                        <td id="protein-grams-cell"></td>
+                        <td id="protein-calories-cell"></td>
+                    </tr>
+                    <tr>
+                        <th class="row-header">Carbs</th>
+                        <td id="carbs-percentage-cell"></td>
+                        <td id="carbs-grams-cell"></td>
+                        <td id="carbs-calories-cell"></td>
+                    </tr>
+                    <tr>
+                        <th class="row-header">Fat</th>
+                        <td id="fat-percentage-cell"></td>
+                        <td id="fat-grams-cell"></td>
+                        <td id="fat-calories-cell"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td id="grams-total-cell"></td>
+                        <td id="calories-total-cell"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+        </article>
+        <div id="right-spacing" class="spacing"></div>
+    </main>
+    <nav class="fixed-navigation">
+        <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="projects.html">Projects</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
+    </nav>
+    <footer>
+        <h2>&copy; Sensei 2017</h2>
+    </footer>
+</body>
+</html>

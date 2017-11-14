@@ -1,0 +1,43 @@
+.activity-level-fieldset {
+    text-align: left;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.weight-intent-fieldset {
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.protein-multiplier-pseudo-fieldset-div {
+    margin-left: 12em;
+    margin-right: 12em;
+}
+
+.protein-multiplier-range-label {
+    display: inline-block;
+    font-size: 1.4em;
+    width: 13%;
+}
+
+.fat-percentage-pseudo-fieldset-div {
+    margin-left: 12em;
+    margin-right: 12em;
+}
+
+.fat-percentage-range-label {
+    display: inline-block;
+    font-size: 1.4em;
+    width: 19%;
+}
+
+#results-table-div {
+    margin-left: 19%;
+    margin-right: 25%;
+}
+
+.monospace-messaging {
+    font-family: monospace;
+    font-size: 2.3em;
+}
