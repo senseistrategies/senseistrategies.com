@@ -132,10 +132,14 @@
             </div>
             <br>
             <br>
-            <button>Calculate</button>
+            <button onclick="DIET_CALCULATOR.retrieveDietCalculatorFunction()()">Calculate</button>
             <br>
             <br>
-            <p class="centered monospace-messaging">----DIET-PLAN----</p>
+            <p class="centered monospace-messaging">-----</p>
+            <p class="centered monospace-messaging">Your base metabolic rate is: <span id="base-metabolic-rate-output"></span> calories</p>
+            <p class="centered monospace-messaging">Your maintenance rate is: <span id="maintenance-rate-output"></span> calories</p>
+            <p class="centered monospace-messaging">Your caloric target is: <span id="caloric-target-output"></span> calories</p>
+            <p class="centered monospace-messaging">-----DIET-PLAN-----</p>
             <div id="results-table-div">
                 <table>
                     <tr>
