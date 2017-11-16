@@ -10,11 +10,12 @@
 <body>
     <header>
         <h1 id="megatitle">Sensei Strategies</h1>
-        <h1>-Diet Calculator-</h1>
+        <h2>\Widgets/</h2>
+        <h1 class="subpage-heading">-Diet Calculator-</h1>
     </header>
     <nav class="fixed-navigation">
         <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
-        <div class="fixed-navigation-link"><a class="navigation-link" href="projects.html">Projects</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="widgets.html">Widgets</a></div>
         <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
         <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
     </nav>
@@ -23,7 +24,7 @@
             <div class="floating-navigation-spacing"></div>
             <div class="floating-navigation-inner-container">
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
-                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="projects.html">Projects</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="widgets.html">Widgets</a></div>
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
             </div>
@@ -35,7 +36,7 @@
             <div class="floating-navigation-spacing"></div>
             <div class="floating-navigation-inner-container">
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
-                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="projects.html">Projects</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="widgets.html">Widgets</a></div>
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
                 <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
             </div>
@@ -45,7 +46,7 @@
     <main>
         <div id="left-spacing" class="spacing"></div>
         <article>
-            <p>Here is where the calculator starts. There might be an explanation of what this page is and does here.</p><br>
+            <p>This is an entirely client-side calculator. It will generate a macronutrient diet plan. A metric version or something might be forthcoming.</p><br>
             <p class="inlined">Height in inches: </p><input id="height-in-inches-input" type="number"><br>
             <p class="inlined">Weight in pounds: </p><input id="weight-in-pounds-input" type="number"><br>
             <p class="inlined">Age in years: </p><input id="age-input" type="number"><br>
@@ -112,24 +113,7 @@
             </div>
             <br>
             <br>
-            <div class="fat-percentage-pseudo-fieldset-div">
-                <p class="inlined">What percentage of your calories should be fat?</p><br>
-                <div>
-                    <div class="fat-percentage-range-label">10%</div>
-                    <div class="fat-percentage-range-label">20%</div>
-                    <div class="fat-percentage-range-label">30%</div>
-                    <div class="fat-percentage-range-label">40%</div>
-                    <div class="fat-percentage-range-label">50%</div>
-                </div>
-                <input id="fat-percentage-input" type="range" min="10" max="50" step="10" value="30">
-                <datalist id="fat-percentage-datalist">
-                    <option>10%</option>
-                    <option>20%</option>
-                    <option>30%</option>
-                    <option>40%</option>
-                    <option>50%</option>
-                </datalist>
-            </div>
+            <p class="inlined">What percentage of your calories will come from fat? </p><input id="fat-percentage-input" type="number"><br>
             <br>
             <br>
             <button onclick="DIET_CALCULATOR.retrieveDietCalculatorFunction()()">Calculate</button>
@@ -179,7 +163,7 @@
     </main>
     <nav class="fixed-navigation">
         <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
-        <div class="fixed-navigation-link"><a class="navigation-link" href="projects.html">Projects</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="widgets.html">Widgets</a></div>
         <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
         <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
     </nav>

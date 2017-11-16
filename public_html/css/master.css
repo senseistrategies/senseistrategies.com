@@ -10,6 +10,11 @@ body {
     font-weight: bold;
 }
 
+h2 {
+    margin-top: 0;
+    margin-bottom: .1em;
+}
+
 a {
     font-weight: bold;
     color: inherit;
@@ -49,6 +54,7 @@ input {
 input[type=number] {
     width: 3.1em;
     background-color: #666;
+    text-align: center;
 }
 
 /* width and height 1.1em are multiplicative on previous magnification 1.75em
@@ -90,6 +96,20 @@ td, th {
     padding-right: .4em;
     padding-top: .2em;
     padding-bottom: .2em;
+}
+
+.muted-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.muted-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.subpage-heading {
+    margin-top: .1em;
 }
 
 /* TOOLS */
