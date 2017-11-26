@@ -1,0 +1,16 @@
+table {
+    display: inline;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #888;
+}
+
+.table-input {
+    font-size: 1em;
+}
+
+.delete-button {
+    font-size: .8em;
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<head>
+    <title>Diet Composer</title>
+    <link rel="stylesheet" href="css/master.css"/>
+    <link rel="stylesheet" href="css/diet_composer.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script type="text/javascript" src="js/diet_composer.js"></script>
+    <script type="text/javascript" src="js/food_database.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="megatitle">Sensei Strategies</h1>
+        <h2>\Widgets/</h2>
+        <h1 class="subpage-heading">-Diet Composer-</h1>
+    </header>
+    <nav class="fixed-navigation">
+        <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="widgets.html">Widgets</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
+    </nav>
+    <div id="left-navigation-container" class="floating-navigation-container">
+        <nav id="left-navigation" class="floating-navigation separate-time">
+            <div class="floating-navigation-spacing"></div>
+            <div class="floating-navigation-inner-container">
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="widgets.html">Widgets</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
+            </div>
+            <div class="floating-navigation-spacing"></div>
+        </nav>
+    </div>
+    <div id="right-navigation-container" class="floating-navigation-container">
+        <nav id="right-navigation" class="floating-navigation separate-time">
+            <div class="floating-navigation-spacing"></div>
+            <div class="floating-navigation-inner-container">
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="apps.html">Apps</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="widgets.html">Widgets</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="videos.html">Videos</a></div>
+                <div class="floating-navigation-link"><a class="padded-navigation navigation-link" href="blog.html">Blog</a></div>
+            </div>
+            <div class="floating-navigation-spacing"></div>
+        </nav>
+    </div>
+    <main>
+        <div id="left-spacing" class="spacing"></div>
+        <article>
+            <div id="application-div" ng-app="ComposerApp">
+                <div id="canvas-container">
+                    <canvas></canvas>
+                </div>
+                <div id="listing-container">
+                    <table id="listing-table"></table>
+                </div>
+                <div id="database-container" ng-controller="DatabaseController as databaseController">
+                    <form ng-submit="databaseController.addRow()">
+                    <table>
+                        <tr>
+                            <th>Serving Size</th>
+                            <th>in Grams</th>
+                            <th>Food Name</th>
+                            <th>Protein (g)</th>
+                            <th>Carb (g)</th>
+                            <th>Fat (g)</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tr ng-repeat="row in databaseController.database">
+                            <td>{{row.servingSize}}</td>
+                            <td>{{row.servingSizeGrams}}</td>
+                            <th>{{row.foodName}}</th>
+                            <td>{{row.proteinGrams}}</td>
+                            <td>{{row.carbGrams}}</td>
+                            <td>{{row.fatGrams}}</td>
+                            <td><button class="delete-button" ng-click="databaseController.deleteRow(row)">X</button></td>
+                        </tr>
+                        <tr>
+                            <td class="table-input"><input type="text" ng-model="databaseController.newServingSize"></td>
+                            <td class="table-input"><input type="number" ng-model="databaseController.newServingSizeGrams"></td>
+                            <td class="table-input"><input type="text" ng-model="databaseController.newFoodName"></td>
+                            <td class="table-input"><input type="number" ng-model="databaseController.newProteinGrams"></td>
+                            <td class="table-input"><input type="number" ng-model="databaseController.newCarbGrams"></td>
+                            <td class="table-input"><input type="number" ng-model="databaseController.newFatGrams"></td>
+                            <td class="table-input"><input type="submit" value="/\"></td>
+                        </tr>
+                    </table>
+                    </form>
+                </div>
+            </div>
+        </article>
+        <div id="right-spacing" class="spacing"></div>
+    </main>
+    <nav class="fixed-navigation">
+        <div class="fixed-navigation-link"><a class="navigation-link" href="apps.html">Apps</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="widgets.html">Widgets</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="videos.html">Videos</a></div>
+        <div class="fixed-navigation-link"><a class="navigation-link" href="blog.html">Blog</a></div>
+    </nav>
+    <footer>
+        <h2>&copy; Sensei 2017</h2>
+    </footer>
+</body>
+</html>

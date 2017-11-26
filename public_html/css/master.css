@@ -51,6 +51,11 @@ input {
     font-size: 1.75em;
 }
 
+input[type=text] {
+    background-color: #666;
+    text-align: center;
+}
+
 input[type=number] {
     width: 3.1em;
     background-color: #666;
