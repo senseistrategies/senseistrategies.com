@@ -15,11 +15,15 @@ th, td {
     font-size: .8em;
 }
 
-input[type=number] {
-    font-size: 1em;
-}
-
 #canvas-immediate-container {
     width: 60%;
     display: inline-block;
+}
+
+#canvas-controls {
+    font-size: 2.15em;
+}
+
+.input-number-size-normalized {
+    font-size: 1em;
 }

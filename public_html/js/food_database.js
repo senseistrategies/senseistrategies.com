@@ -144,7 +144,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 0
     },
     {
-      "servingSize": "",
+      "servingSize": "85 grams",
       "servingSizeGrams": 85,
       "foodName": "Baby carrot",
       "proteinGrams": 1,
@@ -304,7 +304,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 4
     },
     {
-      "servingSize": "?",
+      "servingSize": "75 grams",
       "servingSizeGrams": 75,
       "foodName": "Challah bread",
       "proteinGrams": 5,
@@ -328,7 +328,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 10
     },
     {
-      "servingSize": "",
+      "servingSize": "100 grams",
       "servingSizeGrams": 100,
       "foodName": "Chicken wing",
       "proteinGrams": 27,
@@ -336,7 +336,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 19.3
     },
     {
-      "servingSize": "",
+      "servingSize": "100 grams",
       "servingSizeGrams": 100,
       "foodName": "Chicken breast",
       "proteinGrams": 30,
@@ -368,7 +368,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 6.1
     },
     {
-      "servingSize": "",
+      "servingSize": "100 grams",
       "servingSizeGrams": 100,
       "foodName": "Steak",
       "proteinGrams": 27,
@@ -376,7 +376,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 15
     },
     {
-      "servingSize": "",
+      "servingSize": "4 oz",
       "servingSizeGrams": 112,
       "foodName": "Ground beef (88/12)",
       "proteinGrams": 22,
@@ -512,7 +512,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 8
     },
     {
-      "servingSize": "",
+      "servingSize": "100 grams",
       "servingSizeGrams": 100,
       "foodName": "Egg white",
       "proteinGrams": 11,
@@ -592,7 +592,7 @@ angular.module("ComposerApp").value("foodDatabase", [
       "fatGrams": 0.5
     },
     {
-      "servingSize": "",
+      "servingSize": "66 grams",
       "servingSizeGrams": 66,
       "foodName": "Turkey hill mint choco ice cream",
       "proteinGrams": 2,

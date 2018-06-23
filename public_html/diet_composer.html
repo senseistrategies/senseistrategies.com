@@ -53,10 +53,10 @@
                         <canvas id="widget-canvas"></canvas>
                     </div>
                     <script type="text/javascript" src="js/diet_composer_chart.js"></script>
-                    <div id="canvas-controls" style="font-size: 2.15em">
-                        <input type="number" placeholder="50">g Protein&nbsp;&nbsp;&nbsp;
-                        <input type="number" placeholder="50">g Carb&nbsp;&nbsp;&nbsp;
-                        <input type="number" placeholder="50">g Fat
+                    <div id="canvas-controls" ng-controller="TargetsController as targetsController">
+                        <input ng-model="proteinTarget" ng-change="targetsController.updateTargets()" type="number" placeholder="50" class="input-number-size-normalized">g Protein&nbsp;&nbsp;&nbsp;
+                        <input ng-model="carbTarget" ng-change="targetsController.updateTargets()" type="number" placeholder="50" class="input-number-size-normalized">g Carb&nbsp;&nbsp;&nbsp;
+                        <input ng-model="fatTarget" ng-change="targetsController.updateTargets()" type="number" placeholder="50" class="input-number-size-normalized">g Fat
                     </div>
                 </div>
                 <br>
@@ -73,12 +73,12 @@
                             <th>Remove</th>
                         </tr>
                         <tr ng-repeat="item in listingController.list track by $index">
-                            <td><input type="number" placeholder="1"></td>
+                            <td><input ng-model="item.quantity" ng-change="listingController.updateItem(item)" type="number" placeholder="1" min="1" class="input-number-size-normalized"></td>
                             <td>{{item.servingSize}}</td>
                             <th>{{item.foodName}}</th>
-                            <td>{{item.proteinGrams}}</td>
-                            <td>{{item.carbGrams}}</td>
-                            <td>{{item.fatGrams}}</td>
+                            <td>{{item.totalProteinGrams}}</td>
+                            <td>{{item.totalCarbGrams}}</td>
+                            <td>{{item.totalFatGrams}}</td>
                             <td><button class="item-button" ng-click="listingController.deleteItem(item)">X</button></td>
                         </tr>
                     </table>
@@ -116,7 +116,7 @@
                             <td class="table-input"><input type="number" ng-model="databaseController.newProteinGrams"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newCarbGrams"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newFatGrams"></td>
-                            <td class="table-input"><input type="submit" value="/|"></td>
+                            <td class="table-input"><input type="submit" value="/\"></td>
                         </tr>
                     </table>
                     </form>

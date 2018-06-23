@@ -2,39 +2,24 @@ var barChartData = {
     labels: ["Protein", "Carbs", "Fat"],
     datasets: [
         {
-            label: "Food 1",
-            data: [
-                22,
-                7,
-                18
-            ],
-            backgroundColor: "rgba(255,0,0,.4)",
-            hoverBackgroundColor: "rgba(255,0,0,.8)"
-        },
-        {
-            label: "Food 2",
-            data: [
-                2,
-                16,
-                13
-            ],
-            backgroundColor: "rgba(0,255,0,.4)",
-            hoverBackgroundColor: "rgba(0,255,0,.8)"
-        },
-        {
             label: "Remaining",
             data: [
-                153,
-                30,
-                122
+                50,
+                50,
+                50
+            ],
+            targets: [
+                50,
+                50,
+                50
             ],
             backgroundColor: "rgba(30,30,30,.4)",
             hoverBackgroundColor: "rgba(30,30,30,.8)"
         }
     ]
 };
-var ctx = document.getElementById("widget-canvas").getContext("2d");
-var myChart = new Chart(ctx, {
+var context = document.getElementById("widget-canvas").getContext("2d");
+var composerChart = new Chart(context, {
     type: "bar",
     data: barChartData,
     options: {
@@ -42,6 +27,7 @@ var myChart = new Chart(ctx, {
             xAxes: [{
                 stacked: true,
                 barPercentage: .5,
+                suggestedMax: 400,
                 ticks: {
                     fontColor: "rgba(255,255,255,1)"
                 }
@@ -49,6 +35,7 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 stacked: true,
                 ticks: {
+                    maxTicksLimit: 6,
                     fontColor: "rgba(255,255,255,1)"
                 }
             }]
@@ -57,7 +44,7 @@ var myChart = new Chart(ctx, {
             display: false
         },
         tooltips: {
-            position: "custom"
+            position: "nearest"
         },
         hover: {
             mode: "dataset"
@@ -67,4 +54,3 @@ var myChart = new Chart(ctx, {
 Chart.Tooltip.positioners.custom = function(elements, eventPosition) {
     return eventPosition;
 };
-console.log(myChart);
