@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="css/master.css"/>
     <link rel="stylesheet" href="css/diet_composer.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script type="text/javascript" src="js/diet_composer.js"></script>
     <script type="text/javascript" src="js/food_database.js"></script>
 </head>
@@ -47,16 +48,48 @@
         <div id="left-spacing" class="spacing"></div>
         <article>
             <div id="application-div" ng-app="ComposerApp">
-                <div id="canvas-container">
-                    <canvas></canvas>
+                <div id="graph-container">
+                    <div id="canvas-immediate-container">
+                        <canvas id="widget-canvas"></canvas>
+                    </div>
+                    <script type="text/javascript" src="js/diet_composer_chart.js"></script>
+                    <div id="canvas-controls" style="font-size: 2.15em">
+                        <input type="number" placeholder="50">g Protein&nbsp;&nbsp;&nbsp;
+                        <input type="number" placeholder="50">g Carb&nbsp;&nbsp;&nbsp;
+                        <input type="number" placeholder="50">g Fat
+                    </div>
                 </div>
-                <div id="listing-container">
-                    <table id="listing-table"></table>
+                <br>
+                <div id="listing-container" ng-controller="ListingController as listingController">
+                    <form ng-submit="">
+                    <table id="listing-table">
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Serving Size</th>
+                            <th>Food Name</th>
+                            <th>Protein (g)</th>
+                            <th>Carb (g)</th>
+                            <th>Fat (g)</th>
+                            <th>Remove</th>
+                        </tr>
+                        <tr ng-repeat="item in listingController.list track by $index">
+                            <td><input type="number" placeholder="1"></td>
+                            <td>{{item.servingSize}}</td>
+                            <th>{{item.foodName}}</th>
+                            <td>{{item.proteinGrams}}</td>
+                            <td>{{item.carbGrams}}</td>
+                            <td>{{item.fatGrams}}</td>
+                            <td><button class="item-button" ng-click="listingController.deleteItem(item)">X</button></td>
+                        </tr>
+                    </table>
+                    </form>
                 </div>
+                <br>
                 <div id="database-container" ng-controller="DatabaseController as databaseController">
                     <form ng-submit="databaseController.addRow()">
                     <table>
                         <tr>
+                            <th>Use</th>
                             <th>Serving Size</th>
                             <th>in Grams</th>
                             <th>Food Name</th>
@@ -66,22 +99,24 @@
                             <th>Delete</th>
                         </tr>
                         <tr ng-repeat="row in databaseController.database">
+                            <td><button class="item-button" ng-click="databaseController.sendUp(row)">/\</button></td>
                             <td>{{row.servingSize}}</td>
                             <td>{{row.servingSizeGrams}}</td>
                             <th>{{row.foodName}}</th>
                             <td>{{row.proteinGrams}}</td>
                             <td>{{row.carbGrams}}</td>
                             <td>{{row.fatGrams}}</td>
-                            <td><button class="delete-button" ng-click="databaseController.deleteRow(row)">X</button></td>
+                            <td><button class="item-button" ng-click="databaseController.deleteRow(row)">X</button></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td class="table-input"><input type="text" ng-model="databaseController.newServingSize"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newServingSizeGrams"></td>
                             <td class="table-input"><input type="text" ng-model="databaseController.newFoodName"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newProteinGrams"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newCarbGrams"></td>
                             <td class="table-input"><input type="number" ng-model="databaseController.newFatGrams"></td>
-                            <td class="table-input"><input type="submit" value="/\"></td>
+                            <td class="table-input"><input type="submit" value="/|"></td>
                         </tr>
                     </table>
                     </form>

@@ -11,6 +11,15 @@ th, td {
     font-size: 1em;
 }
 
-.delete-button {
+.item-button {
     font-size: .8em;
+}
+
+input[type=number] {
+    font-size: 1em;
+}
+
+#canvas-immediate-container {
+    width: 60%;
+    display: inline-block;
 }

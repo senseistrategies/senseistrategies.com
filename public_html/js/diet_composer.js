@@ -1,5 +1,8 @@
 angular.module("ComposerApp", [])
-        .controller("DatabaseController", function(foodDatabase) {
+        .factory("foodListing", function() {
+            return [];
+})
+        .controller("DatabaseController", function(foodDatabase, foodListing) {
             
             this.database = foodDatabase;
             
@@ -44,5 +47,14 @@ angular.module("ComposerApp", [])
             this.deleteRow = function(row) {
                 this.database.splice(this.database.indexOf(row), 1);
             };
+            
+            this.sendUp = function(row) {
+                foodListing.push(row);
+            };
+            
+})
+        .controller("ListingController", function(foodListing) {
+            
+            this.list = foodListing;
             
 });
